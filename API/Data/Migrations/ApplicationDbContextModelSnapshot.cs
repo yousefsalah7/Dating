@@ -29,6 +29,56 @@ namespace API.Data.Migrations
 
                     b.ToTable("Users");
                 });
+
+            modelBuilder.Entity("API.Entities.Khedma", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("address")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("address2")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("countryID")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("firstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("lastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("mobile")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("nationalId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("receiveNewsLetters")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("type")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Khadamat");
+                });
 #pragma warning restore 612, 618
         }
     }

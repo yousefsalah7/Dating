@@ -1,0 +1,104 @@
+<!-- <form>
+  <div class="row">
+    <div style="margin-top:10%;margin-left:10% ;">
+      <div class="card mt-2">
+        <div class="modal-header">
+          <div class="modal-title">Delete Project</div>
+          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="text-warning">Are you sure to delete this Project?</div>
+
+          <div class="form-group row">
+            <label for="txtDeleteProjectID" class="col-sm-4 col-form-label">Project ID</label>
+            <div class="col-sm-8">
+              <input type="text" id="txtDeleteProjectID" style="width:100px" class="form-control-plain-text" placeholder="Project ID" name="ProjectID"  disabled="disabled">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="txtDeleteProjectName" class="col-sm-4 col-form-label">Project Name</label>
+            <div class="col-sm-8">
+              <input type="text" id="txtDeleteProjectName" class="form-control-plain-text" placeholder="Project Name" name="ProjectName" disabled="disabled">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+          <button class="btn btn-success" data-dismiss="modal" >Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form> -->
+<form>
+  <div class="row" style="margin-top: 5%;">
+    <div class="col-lg-8 col-xl-6  col-md-9 mx-auto">
+      <div class="card mt-4">
+        <div class="card-header bg-secondary text-white text-center">
+          <h3>استعلام عن طلب خدمة </h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group text-center form-row">
+            <label for="UserName" class="col-md-8 text-center col-form-label">رقم الطلب  </label>
+            <div class="col-md-8">
+              <input type="text" style="margin-left:25% ;" [(ngModel)]="Rqm" class="form-control text-center" placeholder="number"  name="UserName" autofocus="autofocus">
+            </div>
+          </div>
+
+          <div class="form-group text-center form-row">
+            <label for="Password" class="col-md-8 text-center col-form-label">اسم صاحب الطلب </label>
+            <div class="col-md-8">
+              <input type="text" style="margin-left:25% ;" [(ngModel)]="Esm"  class=" text-center form-control" placeholder="name "  name="Password">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card-footer text-center">
+          <span class="text-danger">&nbsp;</span>
+          <button class="btn btn-primary"(click)="Ist3lam()" data-bs-toggle="modal" data-bs-target="#deleteModal"  >استعلام</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<form >
+  <div class="modal" style=" margin: auto; margin-top: 10%; height:350% ; "  role="dialog" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:auto ; ">
+        <div class="modal-header">
+          <button mat-button type="button" class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+          <div class="modal-title" style="margin-right:5% ; font-size: 150%;" >حالة الطلب</div>
+        </div>
+        <div class="modal-body">
+
+          <div class="text-warning text-center" style="font-size:250%;" >  حالة الطلب الخاص بكم  </div> &nbsp; &nbsp;
+          <div class="text-info text-center" style="font-size:150%;" >  {{currunt.currentState}}   </div>
+
+          <!-- <div class="form-group row">
+            <label for="txtDeleteProjectID" class="col-sm-4 col-form-label">Project ID</label>
+            <div class="col-sm-8">
+              <input type="text" id="txtDeleteProjectID" style="width:100px" class="form-control-plain-text" placeholder="Project ID" name="ProjectID"  disabled="disabled">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="txtDeleteProjectName" class="col-sm-4 col-form-label">Project Name</label>
+            <div class="col-sm-8">
+              <input type="text" id="txtDeleteProjectName" class="form-control-plain-text" placeholder="Project Name" name="ProjectName"  disabled="disabled">
+            </div>
+          </div> -->
+
+        </div>
+        <div class="modal-footer text-center">
+
+          <button class="btn btn-success text-center" style="margin:auto ;width: 20%;" data-bs-dismiss="modal" >Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

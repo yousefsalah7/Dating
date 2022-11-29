@@ -13,7 +13,7 @@ namespace API.Controllers
         {
          _db=   applicationDbContext;
         }
-       
+        
         [Route("[controller]")]
         [HttpGet]
         public async Task< ActionResult<IEnumerable<AppUser>>> GetUsers()

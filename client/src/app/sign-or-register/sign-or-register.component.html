@@ -1,0 +1,122 @@
+<form [formGroup]="LoginForm">
+  <div class="row">
+    <div class="col-lg-6  col-xl-5 col-md-8 mx-auto">
+      <div class="card mt-4">
+        <div class="card-header bg-secondary text-center  text-white">
+          <h3 class="mt-2" style="font-size: 200%;">Login</h3>
+          <div appAlert ></div>
+        </div>
+
+        <div class="card-body ">
+          <div class="form-group d-flex justify-content-center form-row">
+            <label for="UserName" class="col-md-4 col-form-label">Username</label>
+            <div class="col-md-8">
+              <input type="text" class="form-control" placeholder="Username" formControlName="UserName"  name="UserName" autofocus="autofocus">
+            </div>
+          </div>
+          &nbsp;
+          <div class="form-group  d-flex justify-content-center form-row">
+            <label for="Password" class="col-md-4 col-form-label">Password</label>
+            <div class="col-md-8">
+              <input type="password" class="form-control" placeholder="Password" formControlName="passwd"  name="Password">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card-footer d-flex justify-content-between   ">
+          <!-- <span class="text-danger">{{loginError}}&nbsp;</span> -->
+          <div class="text-end">
+
+            <button class="btn btn-primary  " (click)="Onloginclick()" >Login</button>
+          </div>
+          <div>
+            <span style="color:rgb(255, 0, 157) ;" > Don't have Account Please Rigister </span>
+            &nbsp;
+            <button class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#deleteModal" >Register</button>
+          </div>
+          <!-- <div *appRepeater="5; let i">
+            <a class="btn btn-primary" data-toggle="collapse" [href]=" '#collapse' + i " role="button">Show Details</a>
+
+            <div class="collapse" [id]=" 'collapse' + i">
+              <div class="card card-body">
+                Actual details here
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+<form [formGroup]="signUpForm">
+  <div class="modal" style=" margin: auto; margin-top: 5%; height:350% ; "  role="dialog" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:auto ; ">
+        <div class="modal-header">
+          <button mat-button type="button" class="close"  data-bs-dismiss="modal"><span>&times; </span></button>
+          <div class="modal-title" style="margin-right:5% ; font-size: 150%;" >Register An Account </div>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group row">
+            <label for="user" class="col-sm-4 col-form-label">User Name</label>
+            <div class="col-sm-8">
+              <input type="text" id="user" formControlName="UserName" class="form-control" placeholder="User Name  " name="ProjectID" >
+            </div>
+          </div>
+          &nbsp;
+            <div class="form-group row">
+            <label for="user" class="col-sm-4 col-form-label">FirstName</label>
+            <div class="col-sm-8">
+              <input type="text" id="user" formControlName="firstname" class="form-control" placeholder="FirstName " name="ProjectID" >
+            </div>
+          </div>
+          &nbsp;
+            <div class="form-group row">
+            <label for="user" class="col-sm-4 col-form-label">lastName</label>
+            <div class="col-sm-8">
+              <input type="text" id="user" formControlName="lastname"class="form-control" placeholder="Last Name  " name="ProjectID" >
+            </div>
+          </div>
+          &nbsp;
+            <div class="form-group row">
+            <label for="user" class="col-sm-4 col-form-label">Company name</label>
+            <div class="col-sm-8">
+              <input type="text" id="user" formControlName="company"class="form-control" placeholder="Company Name  " name="ProjectID" >
+            </div>
+          </div>
+          &nbsp;
+          <div class="form-group row">
+            <label for="txtDeleteProjectName" class="col-sm-4 col-form-label">Password</label>
+            <div class="col-sm-8">
+              <input type="password" id="txtDeleteProjectName" formControlName="passwd" class="form-control" placeholder="Password" name="ProjectName" >
+            </div>
+          </div>
+          &nbsp;
+          <div class="form-group row">
+            <label for="txtDeleteProjectName" class="col-sm-4 col-form-label">Confirm Passsword</label>
+            <div class="col-sm-8">
+              <input type="password" formControlName="confirmpasswd" id="txtDeleteProjectName" class="form-control" placeholder="Confirm Passsword" name="ProjectName" >
+            </div>
+          </div>
+          &nbsp;
+            <div class="form-group row">
+            <label for="email" class="col-sm-4 col-form-label">Email</label>
+            <div class="col-sm-8">
+              <input type="email" id="email" formControlName="Email"  class="form-control" placeholder="Email" name="ProjectID" >
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer text-center">
+
+          <button class="btn btn-success text-center" style="margin:auto ;width: 20%;" (click)="OnRegisterClick()" data-bs-dismiss="modal" >Register</button>
+        </div>
+      </div>
+    </div>
+  </div>

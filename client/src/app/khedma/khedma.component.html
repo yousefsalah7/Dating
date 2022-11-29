@@ -1,0 +1,146 @@
+<div class="row">
+  <div class="col-md-6 col-xl-8 mx-auto">
+    <div class="card mt-1">
+      <div class="card-header text-center">
+        <h4>طلب خدمة </h4>
+      </div>
+
+      <div class="card-body">
+
+          <form #newForm="ngForm" [formGroup]="signUpForm" class="row g-3">
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">first name  </label>
+              <input type="email" class="form-control" id="inputEmail4" formControlName="firstName">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Last name </label>
+              <input type="password" class="form-control" id="inputPassword4" formControlName="lastName">
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email <i class="fa fa-file-text" aria-hidden="true"></i></label>
+              <input type="email" class="form-control" id="inputEmail4" formControlName="email" >
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Phone <i class="fa fa-phone" aria-hidden="true"></i></label>
+              <input type="tel" class="form-control" id="inputPassword4" formControlName="mobile">
+            </div>
+            <div class="col-md-8">
+              <label for="inputPassword4" class="form-label">national Id <i class="fa fa-id-card" aria-hidden="true"></i></label>
+              <input type="password" class="form-control" id="inputPassword4" formControlName="nationalId">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="address">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">currentState</label>
+              <input type="text" class="form-control"  id="inputAddress2" placeholder="Pending" formControlName="currentState" disabled="disabled">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" formControlName="countryID" id="inputCity">
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+
+            <div class="col-12">
+              <legend class="col-form-label col-sm-2 pt-0">Select Service  &nbsp;<i class="fa fa-server" aria-hidden="true"></i></legend>
+                <div class="row">
+
+                <div class="col-md-4">
+                  <input class="form-check-input" type="radio" name="type" id="gridRadios1" value="option1"  checked formControlName="type">
+                  <label class="form-check-label" for="gridRadios1">
+
+                   &nbsp; New Event
+                  </label>
+                </div>
+                <div class="col-md-4">
+                  <input class="form-check-input" type="radio"  formControlName="type" name="type" id="gridRadios2" value="Change band members" checked>
+                  <label class="form-check-label" for="gridRadios2">
+                    &nbsp; Change band members
+                  </label>
+                </div>
+                <div class="col-md-4 disabled">
+                  <input class="form-check-input" type="radio" formControlName="type" name="type" id="gridRadios3" value="Other" >
+                  <label class="form-check-label" for="gridRadios3">
+                    &nbsp; others
+                  </label>
+                </div>
+
+                </div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" formControlName="receiveNewsLetters" type="checkbox" id="gridCheck">
+                <label class="form-check-label"  for="gridCheck">
+                  Get News with Email & Sms
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="button" data-md-toggle="modal" data-target="#deleteModal" class="btn btn-primary" (click)="OnSubmitClick();openSnackBar('There Is new Talab ', 'GoTo Talabat');openDialog();">Submit <i class="fa fa-stumbleupon-circle" aria-hidden="true"></i></button>
+
+              <!-- <mat-form-field appearance="fill">
+                <mat-label>Message</mat-label>
+                <input matInput value="Disco party!" #message>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Action</mat-label>
+                <input matInput value="Dance" #action>
+              </mat-form-field> -->
+
+              <!-- <button mat-stroked-button (click)="">Show snack-bar</button> -->
+
+            </div>
+          </form>
+          <div>
+            <div>
+             {{signUpForm.value | json}}
+            </div>
+<!-- <form>
+    <div class="modal" role="dialog" id="deleteModal">
+      <div class="modal-dialog">
+        <div class="modal-content" style="width:700px">
+          <div class="modal-header">
+            <div class="modal-title">Delete Project</div>
+            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="text-warning">Are you sure to delete this Project?</div>
+
+            <div class="form-group row">
+              <label for="txtDeleteProjectID" class="col-sm-4 col-form-label">Project ID</label>
+              <div class="col-sm-8">
+                <input type="text" id="txtDeleteProjectID" style="width:100px" class="form-control-plain-text" placeholder="Project ID" name="ProjectID"  disabled="disabled">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="txtDeleteProjectName" class="col-sm-4 col-form-label">Project Name</label>
+              <div class="col-sm-8">
+                <input type="text" id="txtDeleteProjectName" class="form-control-plain-text" placeholder="Project Name" name="ProjectName" disabled="disabled">
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-success" data-dismiss="modal" >Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</form> -->
+    </div>
+
